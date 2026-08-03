@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Caça-Palavras</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+<div id="app">
+
+<div id="menu">
+
+    <h1>CAÇA-PALAVRAS</h1>
+
+    <p>
+        Encontre todas as palavras e avance pelos cinco desafios.
+    </p>
+
+    <button id="btnNovoJogo">
+        NOVO JOGO
+    </button>
+
+    <p id="versao">
+        Versão 1.0
+    </p>
+
+</div>
+
+<div id="game" class="oculto">
+
+    <h2>Estágio 1</h2>
+    <div id="painelPalavras">
+
+        <p>Palavras para encontrar:</p>
+
+        <div id="listaPalavras"></div>
+
+    </div>
+    <div id="board">
+
+    </div>
+</div>
+</div>
+
+<script src="js/words.js"></script>
+
+<script src="js/board.js"></script>
+
+<script src="js/stages.js"></script>
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
