@@ -1,11 +1,6 @@
 const TAMANHO_TABULEIRO = 15;
 
 
-/*
-    Cria uma matriz 15 x 15.
-
-    Cada posição começa com uma string vazia.
-*/
 function criarMatrizVazia() {
 
     const matriz = [];
@@ -37,14 +32,7 @@ function criarMatrizVazia() {
 }
 
 
-/*
-    Gera um número inteiro aleatório.
 
-    Exemplo:
-    gerarNumeroAleatorio(15)
-
-    Pode retornar números entre 0 e 14.
-*/
 function gerarNumeroAleatorio(numeroMaximo) {
 
     return Math.floor(
@@ -54,13 +42,7 @@ function gerarNumeroAleatorio(numeroMaximo) {
 }
 
 
-/*
-    Coloca uma palavra na horizontal.
 
-    Exemplo:
-
-    J A V A
-*/
 function posicionarPalavraHorizontal(
     matriz,
     palavra,
@@ -82,16 +64,7 @@ function posicionarPalavraHorizontal(
 }
 
 
-/*
-    Coloca uma palavra na vertical.
 
-    Exemplo:
-
-    J
-    A
-    V
-    A
-*/
 function posicionarPalavraVertical(
     matriz,
     palavra,
@@ -113,16 +86,7 @@ function posicionarPalavraVertical(
 }
 
 
-/*
-    Coloca uma palavra na diagonal.
 
-    Exemplo:
-
-    J
-      A
-        V
-          A
-*/
 function posicionarPalavraDiagonal(
     matriz,
     palavra,
@@ -147,13 +111,7 @@ function posicionarPalavraDiagonal(
 }
 
 
-/*
-    Escolhe aleatoriamente uma direção:
 
-    - horizontal
-    - vertical
-    - diagonal
-*/
 function posicionarPalavraAleatoria(
     matriz,
     palavra
