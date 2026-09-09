@@ -229,3 +229,106 @@ button:hover{
     text-decoration:line-through;
 
 }
+
+#telaVitoria {
+
+    background:#374151;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    width:500px;
+
+    text-align:center;
+
+    box-shadow:0 0 20px rgba(0,0,0,.4);
+
+}
+
+#telaVitoria h2 {
+
+    font-size:36px;
+
+    margin-bottom:20px;
+
+    color:#22c55e;
+
+}
+
+#telaVitoria p {
+
+    font-size:18px;
+
+    line-height:1.5;
+
+    color:#e5e7eb;
+
+}
+
+#transicaoEstagio {
+
+    width:500px;
+
+    padding:50px;
+
+    text-align:center;
+
+    background:#374151;
+
+    border-radius:15px;
+
+    box-shadow:0 0 20px rgba(0,0,0,.4);
+
+    animation:aparecerTransicao .5s ease;
+
+}
+
+#transicaoEstagio h2 {
+
+    font-size:32px;
+
+    color:#22c55e;
+
+    margin-bottom:15px;
+
+}
+
+#transicaoEstagio p {
+
+    font-size:20px;
+
+    color:#e5e7eb;
+
+}
+
+@keyframes aparecerTransicao {
+
+    from {
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to {
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+#menu {
+    color: white;
+}
+
+#tituloEstagio {
+    color: #f9fafb;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

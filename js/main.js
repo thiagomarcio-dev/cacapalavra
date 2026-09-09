@@ -3,10 +3,36 @@ console.log("JavaScript carregado!");
 const menu = document.getElementById("menu");
 const game = document.getElementById("game");
 const board = document.getElementById("board");
+const tituloEstagio =
+    document.getElementById("tituloEstagio");
+    const telaVitoria =
+        document.getElementById("telaVitoria");
+
+    const btnVoltarMenu =
+        document.getElementById("btnVoltarMenu");
 
 const listaPalavras =
     document.getElementById("listaPalavras");
 const btnNovoJogo = document.getElementById("btnNovoJogo");
+
+
+const transicaoEstagio =
+    document.getElementById(
+        "transicaoEstagio"
+    );
+
+const mensagemTransicao =
+    document.getElementById(
+        "mensagemTransicao"
+    );
+
+const proximoEstagio =
+    document.getElementById(
+        "proximoEstagio"
+    );
+
+
+
 
 let selecionando = false;
 
@@ -18,7 +44,7 @@ let palavraDoEstagio = "";
 
 
 
-let estagioAtual = 4;
+let estagioAtual = 1;
 
 let palavrasDoEstagio = [];
 
@@ -27,6 +53,10 @@ let palavrasEncontradas = [];
 
 
 btnNovoJogo.addEventListener("click", iniciarJogo);
+btnVoltarMenu.addEventListener(
+    "click",
+    voltarAoMenu
+);
 
 document.addEventListener(
     "mouseup",
@@ -34,6 +64,12 @@ document.addEventListener(
 );
 
 function iniciarJogo() {
+
+    estagioAtual = 1;
+
+    telaVitoria.classList.add("oculto");
+
+    transicaoEstagio.classList.add("oculto");
 
     menu.classList.add("oculto");
 
@@ -46,6 +82,9 @@ function iniciarJogo() {
 function criarTabuleiro() {
 
     board.innerHTML = "";
+
+    tituloEstagio.textContent =
+        `Estágio ${estagioAtual}`;
 
     palavrasEncontradas = [];
 
@@ -466,6 +505,98 @@ function verificarConclusaoDoEstagio() {
     console.log(
         `Estágio ${estagioAtual} concluído!`
     );
+
+    if (ehUltimoEstagio(estagioAtual)) {
+
+        finalizarJogo();
+
+        return;
+
+    }
+
+    avancarEstagio();
+
+}
+
+function avancarEstagio() {
+
+    const estagioConcluido =
+        estagioAtual;
+
+    estagioAtual++;
+
+    game.classList.add(
+        "oculto"
+    );
+
+    mensagemTransicao.textContent =
+        `Estágio ${estagioConcluido} concluído!`;
+
+    proximoEstagio.textContent =
+        `Preparando Estágio ${estagioAtual}...`;
+
+    transicaoEstagio.classList.remove(
+        "oculto"
+    );
+
+    console.log(
+        `Avançando para o estágio ${estagioAtual}`
+    );
+
+    setTimeout(
+        function() {
+
+            transicaoEstagio.classList.add(
+                "oculto"
+            );
+
+            game.classList.remove(
+                "oculto"
+            );
+
+            criarTabuleiro();
+
+        },
+        1800
+    );
+
+}
+
+
+function finalizarJogo() {
+
+    console.log(
+        "Parabéns! Você concluiu os 5 estágios!"
+    );
+
+    game.classList.add("oculto");
+
+    telaVitoria.classList.remove("oculto");
+
+}
+
+function voltarAoMenu() {
+
+    telaVitoria.classList.add("oculto");
+
+    transicaoEstagio.classList.add("oculto");
+
+    game.classList.add("oculto");
+
+    menu.classList.remove("oculto");
+
+    estagioAtual = 1;
+
+    palavrasDoEstagio = [];
+
+    palavrasEncontradas = [];
+
+    board.innerHTML = "";
+
+    listaPalavras.innerHTML = "";
+
+    tituloEstagio.textContent =
+        "Estágio 1";
 
 }
 
